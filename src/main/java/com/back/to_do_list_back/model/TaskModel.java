@@ -2,10 +2,6 @@ package com.back.to_do_list_back.model;
 
 import java.time.LocalDateTime;
 
-import org.antlr.v4.runtime.misc.NotNull;
-
-// import jakarta.validation.constraints.NotBlank;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -25,23 +21,18 @@ public class TaskModel {
     /**
      * Field id.
      */
-    // @Schema(example="1", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     private Long id;
 
     /**
      * Field task title.
      */
     @NonNull
-    // @NotBlank(message = "The title attribute is mandatory.")
-    // @Schema(example="Title", requiredMode = Schema.RequiredMode.REQUIRED)
     private String title; 
 
     /**
      * Field task content.
      */
     @NonNull
-    // @NotBlank(message = "The content attribute is mandatory.")
-    // @Schema(example="Lorem ipsum.", requiredMode = Schema.RequiredMode.REQUIRED)
     private String content; 
 
     //

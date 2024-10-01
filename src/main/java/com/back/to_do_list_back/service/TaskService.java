@@ -1,5 +1,7 @@
 package com.back.to_do_list_back.service;
 
+import java.util.List;
+
 import com.back.to_do_list_back.model.TaskModel;
 
 /**
@@ -13,5 +15,11 @@ public interface TaskService {
      * @param model Model object
      * @return Model object
      */
-    TaskModel create(TaskModel model); 
+    TaskModel createATask(TaskModel model); 
+
+    /**
+     * Signature of a display method to display all tasks.
+     * @return  List<TaskEntity> Collection
+     */
+    List<TaskModel> displayAllTasks();
 }
