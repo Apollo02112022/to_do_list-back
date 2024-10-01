@@ -1,14 +1,19 @@
 package com.back.to_do_list_back.controller;
 
-import com.back.to_do_list_back.entity.TaskEntity;
 import com.back.to_do_list_back.model.TaskModel;
 import com.back.to_do_list_back.service.TaskService;
 import com.back.to_do_list_back.utils.Constants;
 
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Tag(name = "Task API", description = "API to manage tasks.")
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(Constants.API_TASKS)
 @AllArgsConstructor
@@ -30,6 +36,10 @@ public class TaskController {
 
     // CREATE
 
+    @Operation(summary = "Create a new task.", description = "Request to create a new task.")
+    @ApiResponse(responseCode = "201", description = "Task created successfully!", content = {@Content(schema = @Schema(implementation = TaskModel.class))})
+    @ApiResponse(responseCode = "400", description = "Bad Request")
+    @ApiResponse(responseCode = "500", description = "Internal Server Error")
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody TaskModel model) {
         try {
@@ -46,6 +56,11 @@ public class TaskController {
 
     // READ
 
+    @Operation(summary = "Retrieve all task.", description = "Request to retrieve all tasks")
+    @ApiResponse(responseCode = "200", description = "OK")
+    @ApiResponse(responseCode = "400", description = "Bad Request")
+    @ApiResponse(responseCode = "404", description = "Not Found")
+    @ApiResponse(responseCode = "500", description = "Internal Server Error")
     @GetMapping("/all")
     public ResponseEntity<Object> displayAllTasks() throws Exception {
         try {
