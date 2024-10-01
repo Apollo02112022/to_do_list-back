@@ -1,8 +1,8 @@
 package com.back.to_do_list_back.service;
 
-import java.util.List;
-
 import com.back.to_do_list_back.model.TaskModel;
+
+import java.util.List;
 
 /**
  * Interface TaskService implemented

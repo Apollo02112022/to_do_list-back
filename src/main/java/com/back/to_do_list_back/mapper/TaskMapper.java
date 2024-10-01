@@ -1,11 +1,11 @@
 package com.back.to_do_list_back.mapper;
 
+import com.back.to_do_list_back.entity.TaskEntity;
+import com.back.to_do_list_back.model.TaskModel;
+
 import java.util.List;
 
 import org.mapstruct.Mapper;
-
-import com.back.to_do_list_back.entity.TaskEntity;
-import com.back.to_do_list_back.model.TaskModel;
 
 @Mapper(componentModel = "spring")
 public interface TaskMapper {
