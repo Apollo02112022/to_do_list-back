@@ -15,31 +15,19 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TaskModel {
    
-    /**
-     * Field id.
-     */
     private Long id;
 
-    /**
-     * Field task title.
-     */
     @NonNull
     private String title; 
 
-    /**
-     * Field task content.
-     */
     @NonNull
     private String content; 
 
-    //
     @NonNull
     private Boolean isCompleted = false;
 
-    //
     private LocalDateTime completionTime;
 
-    //
     @NonNull
     private LocalDateTime createdAt = LocalDateTime.now();
 }
