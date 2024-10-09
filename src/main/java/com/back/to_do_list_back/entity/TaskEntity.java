@@ -1,15 +1,23 @@
 package com.back.to_do_list_back.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime; 
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "tasks")
 public class TaskEntity {
-
     // Unique identifier for each task.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,12 +35,9 @@ public class TaskEntity {
     @Column(nullable = false)
     private Boolean isCompleted = false;
 
-    // Date and time of completion (NULL if not completed).
-    private LocalDateTime completionTime;
-
     // Task creation date and time.
     @Column(nullable = false)
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDate createdAt = LocalDate.now();
 
     // Getters and setters
 }

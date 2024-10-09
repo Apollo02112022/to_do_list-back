@@ -9,7 +9,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface TaskMapper {
-    
     /**
      * Signature of a entityToModel method used to convert an entity into a model.
      * @param entity Entity object

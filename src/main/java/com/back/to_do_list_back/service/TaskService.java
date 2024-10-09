@@ -10,7 +10,6 @@ import java.util.List;
  * by the TaskServiceImp class.
  */
 public interface TaskService {
-
     // CREATE 
     
     /**
