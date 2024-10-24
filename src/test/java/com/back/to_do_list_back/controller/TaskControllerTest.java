@@ -4,7 +4,6 @@ import com.back.to_do_list_back.model.TaskModel;
 import com.back.to_do_list_back.model.TaskUpdateModel;
 import com.back.to_do_list_back.service.TaskService;
 import com.back.to_do_list_back.utils.Constants;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -26,7 +25,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@Disabled
 @WebMvcTest(TaskController.class)
 public class TaskControllerTest {
 
@@ -67,7 +65,7 @@ public class TaskControllerTest {
                 .andExpect(jsonPath("$.title").value("Title"))
                 .andExpect(jsonPath("$.content").value("Message content."))
                 .andExpect(jsonPath("$.isCompleted").value(false))
-                .andExpect(jsonPath("$.createdAt").value(LocalDate.now()));
+                .andExpect(jsonPath("$.createdAt").value("2024-10-24"));
 
         // Verify
         verify(taskService, times(1)).createATask(inputModel);

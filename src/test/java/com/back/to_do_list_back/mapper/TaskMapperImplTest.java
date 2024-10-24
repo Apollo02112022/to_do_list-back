@@ -3,7 +3,6 @@ package com.back.to_do_list_back.mapper;
 import com.back.to_do_list_back.entity.TaskEntity;
 import com.back.to_do_list_back.model.TaskModel;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -13,7 +12,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-@Disabled
 public class TaskMapperImplTest {
 
     private final TaskMapperImpl taskMapperImpl = new TaskMapperImpl();
